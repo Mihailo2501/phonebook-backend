@@ -28,6 +28,8 @@ let phonebook = [
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('dist'));
+
 morgan.token('body', function (request) {
   return request.method === 'POST' ? JSON.stringify(request.body) : '';
 });
